@@ -1,5 +1,8 @@
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes';
+
 export default function App() {
   return (
-    <div className="bg-blue-700">App</div>
+    <RouterProvider router={router} />
   )
 }
