@@ -38,7 +38,7 @@ export default function Signup() {
                 {errors.password && <span>Password must be between 6 and 20 characters</span>}
                 {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
 
-                <InputField className="mt-2 w-full" type="submit" />
+                <InputField value={'Singup'} className="mt-2 w-full" type="submit" />
 
                 <p className="text-sm p-2">Already have an account? <Link className="text-primary" to='/login'>Login now</Link></p>
             </div>

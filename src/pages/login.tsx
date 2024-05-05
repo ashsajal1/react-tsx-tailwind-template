@@ -32,7 +32,7 @@ export default function Login() {
                 {errors.email && <span>Email is required</span>}
                 {errors.password && <span>Password must be between 6 and 20 characters</span>}
 
-                <InputField className="mt-2 w-full" type="submit" />
+                <InputField value={'Login'} className="mt-2 w-full" type="submit" />
 
                 <p className="text-sm p-2">Don't have an account? <Link className="text-primary" to='/signup'>Singup now</Link></p>
             </div>
