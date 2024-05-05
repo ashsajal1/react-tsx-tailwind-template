@@ -1,20 +1,6 @@
-import { twMerge } from "tailwind-merge";
-import { clsx } from "clsx";
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-type ClassValue =
-  | string
-  | number
-  | ClassDictionary
-  | ClassArray
-  | undefined
-  | null
-  | false;
-
-interface ClassDictionary {
-  [id: string]: never;
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
 }
-
-interface ClassArray extends Array<ClassValue> {}
-export const cn = (...classname: ClassValue[]) => {
-  return twMerge(clsx(classname));
-};

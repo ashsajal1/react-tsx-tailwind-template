@@ -1,12 +1,16 @@
 import { forwardRef, InputHTMLAttributes } from "react";
 import { cn } from "../../lib/cn";
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> { }
 
 const InputField = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-    const { className, ...rest } = props; // Destructure className from props
+    const { className, ...rest } = props;
+    const { type } = rest;
+    const btnClass = 'flex items-center justify-center gap-2 cursor-pointer select-none p-2 rounded active:ring-[3px] active:ring-primary-low transition duration-0 bg-primary hover:bg-primary-high text-white'
+    
+
     return (
-        <input {...rest} ref={ref} className={cn("p-2 border focus:ring-2 outline-none focus:ring-primary rounded", className)} title="Input field" />
+        <input {...rest} ref={ref} className={cn("p-2 border focus:ring-2 outline-none focus:ring-primary rounded", className, {[btnClass]: (type==='submit')})} title="Input field" />
     );
 });
 
