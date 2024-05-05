@@ -1,5 +1,7 @@
 export default function Footer() {
   return (
-    <div>footer</div>
+    <footer className="p-2 text-center border-t">
+        &copy; All rights reservede, Company {new Date().getFullYear()}
+    </footer>
   )
 }
