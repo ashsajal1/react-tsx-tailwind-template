@@ -10,7 +10,7 @@ const InputField = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     
 
     return (
-        <input {...rest} ref={ref} className={cn("p-2 border focus:ring-2 outline-none focus:ring-primary rounded", className, {[btnClass]: (type==='submit')})} title="Input field" />
+        <input {...rest} ref={ref} className={cn("p-2 border  dark:border-none focus:ring-2 outline-none focus:ring-primary rounded", className, {[btnClass]: (type==='submit')})} title="Input field" />
     );
 });
 

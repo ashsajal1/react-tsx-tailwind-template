@@ -24,7 +24,7 @@ export default function Login() {
 
     return (
         <form className="flex items-center md:h-screen justify-center" onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex items-center flex-col p-4 border rounded w-full md:w-1/3">
+            <div className="flex items-center flex-col p-4 border rounded w-full md:w-1/3 dark:border-gray-800">
                 <div className="flex flex-col w-full items-center gap-2">
                     <InputField className="w-full" placeholder="Enter email" type="email" {...register('email')} />
                     <InputField className="w-full" type="password" {...register("password")} />
