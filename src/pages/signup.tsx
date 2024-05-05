@@ -30,13 +30,17 @@ export default function Signup() {
         <form className="flex items-center md:h-screen justify-center" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex items-center flex-col p-4 border rounded w-full md:w-1/3 dark:border-gray-800">
                 <div className="flex flex-col w-full items-center gap-2">
-                    <InputField className="w-full" placeholder="Enter email" type="email" {...register('email')} />
-                    <InputField placeholder="Enter password" className="w-full" type="password" {...register("password")} />
-                    <InputField placeholder="Enter confirm password" className="w-full" type="password" {...register("confirmPassword")} />
+                    <InputField className={`w-full ${errors.email ? 'border-red-600 placeholder-red-400' : ''}`} placeholder="Enter email" type="email" {...register('email')} />
+
+                    {errors.email && <span className="text-red-600 text-sm text-start w-full">Email is required</span>}
+
+                    <InputField placeholder="Enter password" className={`w-full ${errors.password ? 'border-red-600 placeholder-red-400' : ''}`} type="password" {...register("password")} />
+
+                    {errors.password && <span className="text-red-600 text-sm text-start w-full">Password must be between 6 and 20 characters</span>}
+
+                    <InputField placeholder="Enter confirm password" className={`w-full ${errors.confirmPassword ? 'border-red-600 placeholder-red-400' : ''}`} type="password" {...register("confirmPassword")} />
+                    {errors.confirmPassword && <span className="text-red-600 text-sm text-start w-full">Confirm password is required</span>}
                 </div>
-                {errors.email && <span>Email is required</span>}
-                {errors.password && <span>Password must be between 6 and 20 characters</span>}
-                {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
 
                 <InputField value={'Singup'} className="mt-2 w-full" type="submit" />
 
