@@ -4,7 +4,6 @@ import InputField from "../components/ui/input-field"
 type Inputs = {
     email: string
     password: string
-    phone: string
 }
 
 export default function Login() {
@@ -17,12 +16,15 @@ export default function Login() {
 
     return (
         <form className="flex items-center flex-col p-4 border rounded" onSubmit={handleSubmit(onSubmit)}>
-            <input type="email" {...register("email", { required: true })} />
-            <input type="password" {...register("password", { required: true })} />
+            <div className="flex flex-col items-center gap-2">
+                <InputField placeholder="Enter email" type="email" {...register('email')} />
+                <InputField type="password" {...register("password", { required: true })} />
+            </div>
             {errors.email && <span>Email is required</span>}
-            <InputField type="text" {...register('phone')} />
 
-            <input type="submit" />
+            <div className="mt-2">
+                <InputField type="submit" />
+            </div>
         </form>
     )
 }
