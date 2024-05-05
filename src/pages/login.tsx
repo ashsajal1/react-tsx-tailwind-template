@@ -22,9 +22,7 @@ export default function Login() {
             </div>
             {errors.email && <span>Email is required</span>}
 
-            <div className="mt-2">
-                <InputField type="submit" />
-            </div>
+            <InputField className="mt-2" type="submit" />
         </form>
     )
 }
