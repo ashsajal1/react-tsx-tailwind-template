@@ -22,15 +22,17 @@ export default function Login() {
     const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
     return (
-        <form className="flex items-center flex-col p-4 border rounded" onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex flex-col items-center gap-2">
-                <InputField placeholder="Enter email" type="email" {...register('email')} />
-                <InputField type="password" {...register("password")} />
+        <form className="flex items-center md:h-screen justify-center" onSubmit={handleSubmit(onSubmit)}>
+            <div className="flex items-center flex-col p-4 border rounded w-full md:w-1/3">
+                <div className="flex flex-col w-full items-center gap-2">
+                    <InputField className="w-full" placeholder="Enter email" type="email" {...register('email')} />
+                    <InputField className="w-full" type="password" {...register("password")} />
+                </div>
+                {errors.email && <span>Email is required</span>}
+                {errors.password && <span>Password must be between 6 and 20 characters</span>}
+                
+                <InputField className="mt-2 w-full" type="submit" />
             </div>
-            {errors.email && <span>Email is required</span>}
-            {errors.password && <span>Password must be between 6 and 20 characters</span>}
-
-            <InputField className="mt-2" type="submit" />
         </form>
     );
 }
