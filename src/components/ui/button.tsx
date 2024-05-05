@@ -1,11 +1,11 @@
 import { PropsWithChildren, HTMLAttributes } from "react";
 import { cn } from "../../lib/cn";
 
-interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-    className: string
-}
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {}
 
-export default function Button({ children, className, ...props }: PropsWithChildren<ButtonProps>) {
+export default function Button({ children, ...props }: PropsWithChildren<ButtonProps>) {
+
+    const { className } = props
     return (
         <button
             {...props}

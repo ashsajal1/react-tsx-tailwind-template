@@ -2,6 +2,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import InputField from "../components/ui/input-field";
+import { Link } from "react-router-dom";
 
 const schema = z.object({
     email: z.string().email(),
@@ -30,8 +31,10 @@ export default function Login() {
                 </div>
                 {errors.email && <span>Email is required</span>}
                 {errors.password && <span>Password must be between 6 and 20 characters</span>}
-                
+
                 <InputField className="mt-2 w-full" type="submit" />
+
+                <p className="text-sm p-2">Don't have an account? <Link className="text-primary" to='/signup'>Singup now</Link></p>
             </div>
         </form>
     );
