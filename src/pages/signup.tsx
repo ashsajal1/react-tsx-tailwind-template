@@ -42,7 +42,7 @@ export default function Signup() {
                     {errors.confirmPassword && <span className="text-red-600 text-sm text-start w-full">Confirm password is required</span>}
                 </div>
 
-                <InputField value={'Singup'} className="mt-2 w-full" type="submit" />
+                <InputField value={'Signup'} className="mt-2 w-full" type="submit" />
 
                 <p className="text-sm p-2">Already have an account? <Link className="text-primary" to='/login'>Login now</Link></p>
             </div>
