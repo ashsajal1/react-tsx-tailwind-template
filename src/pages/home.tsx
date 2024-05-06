@@ -11,7 +11,17 @@ export default function Home() {
   return (
     <div>
       <Button onClick={() => { setIsOpen(!isOpen) }}>Open dialog</Button>
-      <Dialog setIsOpen={toggleOpen} isOpen={isOpen} />
+      <Dialog setIsOpen={toggleOpen} isOpen={isOpen}>
+        <Dialog.Header>Are you sure to delete the post?</Dialog.Header>
+        <Dialog.Content>
+          Please think again before delete
+        </Dialog.Content>
+
+        <Dialog.ActionButtons>
+          <Button onClick={toggleOpen} variant="outline">Cancel</Button>
+          <Button onClick={toggleOpen}>Ok</Button>
+        </Dialog.ActionButtons>
+      </Dialog>
     </div>
   )
 }
