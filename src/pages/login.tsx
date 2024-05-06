@@ -36,7 +36,7 @@ export default function Login() {
 
                 <InputField value={'Login'} className="mt-2 w-full" type="submit" />
 
-                <p className="text-sm p-2">Don't have an account? <Link className="text-primary" to='/signup'>Singup now</Link></p>
+                <p className="text-sm p-2">Don't have an account? <Link className="text-primary" to='/signup'>Signup now</Link></p>
             </div>
         </form>
     );
