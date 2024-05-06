@@ -1,0 +1,28 @@
+import Button from "./button";
+import { motion } from 'framer-motion'
+
+export default function Dialog({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: () => void }) {
+    if (!isOpen) {
+        return null;
+    }
+
+    return (
+        <div className="fixed inset-0 px-4 md:px-0 z-20 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+
+            <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: isOpen ? 1 : 0, scale: isOpen ? 1 : 0.8 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative md:w-1/3 w-full min-h-[150px] rounded border dark:border-gray-800 bg-white flex flex-col justify-between p-4 dark:text-white dark:bg-black">
+                <h3 className="text-xl font-bold">This is dialog</h3>
+
+                <div className="flex items-center justify-end gap-2">
+                    <Button variant="ghost" onClick={setIsOpen}>Cancel</Button>
+                    <Button onClick={setIsOpen}>Ok</Button>
+                </div>
+            </motion.div>
+
+        </div>
+    )
+}
