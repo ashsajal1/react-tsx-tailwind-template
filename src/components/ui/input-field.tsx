@@ -6,7 +6,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> { }
 const InputField = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     const { className, ...rest } = props;
     const { type } = rest;
-    const btnClass = 'flex items-center justify-center gap-2 cursor-pointer select-none p-2 rounded active:ring-[3px] active:ring-primary-low transition duration-0 bg-primary hover:bg-primary-high text-white'
+    const btnClass = 'flex items-center justify-center gap-2 cursor-pointer select-none p-2 rounded transition duration-0 bg-primary hover:bg-primary-high text-white'
     
 
     return (

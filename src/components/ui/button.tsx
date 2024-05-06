@@ -10,7 +10,7 @@ export default function Button({ children, variant = "solid", ...props }: PropsW
     const { className } = props;
 
     // Define styles based on the variant
-    let buttonStyles = "flex items-center justify-center gap-2 cursor-pointer select-none p-2 rounded active:ring-[3px] active:ring-primary-low transition duration-0 text-white";
+    let buttonStyles = "flex items-center justify-center gap-2 cursor-pointer select-none p-2 rounded transition duration-0 text-white transform active:scale-105";
 
     if (variant === "ghost") {
         buttonStyles += " bg-transparent border border-primary text-primary hover:bg-primary hover:text-white";
