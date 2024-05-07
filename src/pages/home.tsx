@@ -12,17 +12,6 @@ export default function Home() {
     <div>
       <SideNav handleClose={toggleOpen} isOpen={isOpen} />
       <Button onClick={() => { setIsOpen(!isOpen) }}>Open dialog</Button>
-      {/* <Dialog isOpen={isOpen}>
-        <Dialog.Header>Are you sure to delete the post?</Dialog.Header>
-        <Dialog.Content>
-          Please think again before delete
-        </Dialog.Content>
-
-        <Dialog.ActionButtons>
-          <Button onClick={toggleOpen} variant="danger-outline">Cancel</Button>
-          <Button variant="danger" onClick={toggleOpen}>Ok</Button>
-        </Dialog.ActionButtons>
-      </Dialog> */}
     </div>
   )
 }

@@ -53,3 +53,16 @@ export const ActionButtons = ({ children }: PropsWithChildren) => {
 Dialog.Header = Header;
 Dialog.Content = Content;
 Dialog.ActionButtons = ActionButtons;
+
+// sample usage
+{/* <Dialog isOpen={isOpen}>
+    <Dialog.Header>Are you sure to delete the post?</Dialog.Header>
+    <Dialog.Content>
+        Please think again before delete
+    </Dialog.Content>
+
+    <Dialog.ActionButtons>
+        <Button onClick={toggleOpen} variant="danger-outline">Cancel</Button>
+        <Button variant="danger" onClick={toggleOpen}>Ok</Button>
+    </Dialog.ActionButtons>
+</Dialog>  */}
