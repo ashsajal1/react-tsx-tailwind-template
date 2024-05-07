@@ -4,6 +4,7 @@ import ModeToggle from '../ui/mode-toggle'
 import Search from '../ui/search'
 import Text from './../ui/text'
 import { HiOutlineXMark } from "react-icons/hi2";
+import { Link } from 'react-router-dom';
 
 export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, handleClose: () => void }) {
     if (!isOpen) return null;
@@ -34,8 +35,10 @@ export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, hand
 
                 <div className='flex flex-col gap-2 mt-4'>
                     <Search />
-                    <Button className='w-full'>Login</Button>
-                    <Button className='w-full'>Sign up</Button>
+                    <Link to='/login'><Button className='w-full'>Login</Button></Link>
+                    <Link to='/signup'><Button className='w-full'>Signup</Button></Link>
+                    <Link to='/about'><Button className='w-full'>About</Button></Link>
+                    
                 </div>
 
                 <div className='bottom-0 absolute left-0'>
