@@ -20,7 +20,7 @@ export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, hand
                 // exit={{ width: '0', opacity: 0 }}
                 transition={{
                     type: 'tween',
-                    ease: "easeInOut", 
+                    ease: "easeInOut",
                     duration: 0.3,
                     delayChildren: 0.3,
                     staggerChildren: 0.05
@@ -33,12 +33,15 @@ export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, hand
                     <HiOutlineXMark onClick={handleClose} className='h-6 w-6 dark:text-white text-black cursor-pointer' />
                 </div>
 
-                <div className='flex flex-col gap-2 mt-4'>
+                <div className='mt-4'>
                     <Search />
+                </div>
+
+                <div onClick={handleClose} className='flex flex-col gap-2 mt-4'>
                     <Link to='/login'><Button className='w-full'>Login</Button></Link>
                     <Link to='/signup'><Button className='w-full'>Signup</Button></Link>
                     <Link to='/about'><Button className='w-full'>About</Button></Link>
-                    
+
                 </div>
 
                 <div className='bottom-0 absolute left-0'>
