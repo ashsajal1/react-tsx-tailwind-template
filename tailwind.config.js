@@ -10,6 +10,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        'primary-extra-low':teal[100],
         'primary-low':teal[200],
         'primary':teal[600],
         'primary-high':teal[800],
