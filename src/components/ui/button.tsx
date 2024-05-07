@@ -10,22 +10,20 @@ export default function Button({ children, variant = "solid", ...props }: PropsW
     const { className } = props;
 
     // Define styles based on the variant
-    let buttonStyles = "flex items-center justify-center gap-2 cursor-pointer select-none p-2 rounded transition duration-0 text-white transform active:scale-105 min-w-[60px]";
+    let buttonStyles = cn("flex items-center justify-center gap-2 cursor-pointer select-none p-2 rounded transition duration-0 text-white transform active:scale-105 min-w-[60px] bg-primary hover:bg-primary-high");
 
     const danger = 'bg-red-600 hover:bg-red-700';
-    const dangerOutline = 'border border-red-600 text-red-600 bg-white hover:bg-red-200 hover:text-red';
+    const dangerOutline = 'border bg-white dark:bg-black border-red-600 text-red-600 hover:bg-red-200 hover:text-red';
     if (variant === "ghost") {
         buttonStyles += " bg-transparent border border-primary text-primary hover:bg-primary hover:text-white";
     } else if (variant === "outline") {
         buttonStyles += " border border-primary text-primary hover:bg-primary hover:text-white";
-    } else {
-        buttonStyles += " bg-primary hover:bg-primary-high";
     }
 
     return (
         <button
             {...props}
-            className={cn(buttonStyles, className, {[danger] : variant === 'danger', [dangerOutline]:variant==='danger-outline'})}
+            className={cn(buttonStyles, className, { [danger]: variant === 'danger', [dangerOutline]: variant === 'danger-outline' })}
         >
             {children}
         </button>
