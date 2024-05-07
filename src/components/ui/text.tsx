@@ -2,7 +2,7 @@ import { HTMLAttributes } from "react";
 import { cn } from "../../lib/cn";
 
 interface TextProps extends HTMLAttributes<HTMLDivElement> {
-    className: string,
+    className?: string,
     label: string,
 }
 

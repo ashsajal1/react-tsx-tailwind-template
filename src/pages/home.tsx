@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../components/ui/button";
 import Dialog from "../components/ui/dialog";
+import SideNav from "../components/partials/side-nav";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,7 @@ export default function Home() {
   }
   return (
     <div>
+      <SideNav />
       <Button onClick={() => { setIsOpen(!isOpen) }}>Open dialog</Button>
       <Dialog isOpen={isOpen}>
         <Dialog.Header>Are you sure to delete the post?</Dialog.Header>
