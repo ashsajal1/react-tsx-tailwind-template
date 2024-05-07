@@ -15,9 +15,9 @@ export default function Button({ children, variant = "solid", ...props }: PropsW
     const danger = 'bg-red-600 hover:bg-red-700';
     const dangerOutline = 'border bg-white dark:bg-black border-red-600 text-red-600 hover:bg-red-200 hover:text-red';
     if (variant === "ghost") {
-        buttonStyles += " bg-transparent border border-primary text-primary hover:bg-primary hover:text-white";
+        buttonStyles += " bg-transparent border border-primary text-primary hover:bg-primary dark:border-gray-800 hover:text-white";
     } else if (variant === "outline") {
-        buttonStyles += " border border-primary text-primary hover:bg-primary hover:text-white";
+        buttonStyles += " border border-primary dark:border-gray-800 text-primary hover:bg-primary hover:text-white";
     }
 
     return (
