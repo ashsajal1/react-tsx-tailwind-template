@@ -8,7 +8,7 @@ export default function ModeToggle() {
     return (
 
         <Button variant={'ghost'} onClick={toggleMode}>
-            {isDarkMode ? <HiMoon className="h-6 w-6 text-black dark:text-white" /> : <HiSun className="h-6 w-6 dark:text-white" />}
+            {isDarkMode ? <HiSun className="h-6 w-6 text-black dark:text-white" /> : <HiMoon className="h-6 w-6 dark:text-white" />}
         </Button>
     )
 }
