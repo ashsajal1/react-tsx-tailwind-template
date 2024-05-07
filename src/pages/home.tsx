@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Button from "../components/ui/button";
-import Dialog from "../components/ui/dialog";
 import SideNav from "../components/partials/side-nav";
 
 export default function Home() {
@@ -11,9 +10,9 @@ export default function Home() {
   }
   return (
     <div>
-      <SideNav />
+      <SideNav handleClose={toggleOpen} isOpen={isOpen} />
       <Button onClick={() => { setIsOpen(!isOpen) }}>Open dialog</Button>
-      <Dialog isOpen={isOpen}>
+      {/* <Dialog isOpen={isOpen}>
         <Dialog.Header>Are you sure to delete the post?</Dialog.Header>
         <Dialog.Content>
           Please think again before delete
@@ -23,7 +22,7 @@ export default function Home() {
           <Button onClick={toggleOpen} variant="danger-outline">Cancel</Button>
           <Button variant="danger" onClick={toggleOpen}>Ok</Button>
         </Dialog.ActionButtons>
-      </Dialog>
+      </Dialog> */}
     </div>
   )
 }
