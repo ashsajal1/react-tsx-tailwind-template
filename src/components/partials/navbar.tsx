@@ -26,8 +26,8 @@ export default function Navbar() {
         <Text label="Logo" className="text-xl font-bold" />
       </Link>
       <div className="flex items-center gap-2">
+      <ModeToggle />
         <Search />
-        <ModeToggle />
         <Link to='/login'><Button>Login</Button></Link>
       </div>
     </nav>
