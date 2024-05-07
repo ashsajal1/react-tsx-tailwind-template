@@ -12,7 +12,7 @@ export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, hand
             {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
             <div className='flex items-center justify-between'>
                 <Text className='text-xl font-bold' label='Logo' />
-                <HiOutlineXMark onClick={handleClose} className='h-6 w-6' />
+                <HiOutlineXMark onClick={handleClose} className='h-6 w-6 dark:text-white text-black' />
             </div>
 
             <div className='flex flex-col gap-2 mt-4'>
