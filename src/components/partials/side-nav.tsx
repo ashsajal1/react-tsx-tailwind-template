@@ -25,10 +25,9 @@ export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, hand
                     staggerChildren: 0.05
                 }}
                 animate={isOpen ? { width: '75%', opacity: 1 } : { width: '0', opacity: 0 }}
-                className='fixed inset-0 left-0 z-20 top-0 max-h-full h-full bg-white border dark:border-gray-800 p-3 dark:bg-black overflow-y-auto md:hidden'
-
+                className='fixed inset-0 left-0 z-20 top-0 max-h-full h-full bg-white border dark:border-gray-800 px-3 dark:bg-black overflow-y-auto md:hidden'
             >
-                <div className='flex items-center justify-between'>
+                <div className='flex items-center justify-between h-[80px] border-b'>
                     <Text className='text-xl font-bold' label='Logo' />
                     <HiOutlineXMark onClick={handleClose} className='h-6 w-6 dark:text-white text-black cursor-pointer' />
                 </div>

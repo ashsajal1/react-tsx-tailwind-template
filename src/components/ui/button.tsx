@@ -15,7 +15,6 @@ export default function Button({ children, variant = "solid", ...props }: PropsW
     const dangerStyle = 'bg-red-600 hover:bg-red-700';
     const dangerOutlineStyle = 'border bg-white dark:bg-black border-red-600 text-red-600 hover:bg-red-200 hover:text-red';
 
-
     return (
         <button
             {...props}
