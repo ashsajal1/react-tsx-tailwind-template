@@ -28,19 +28,21 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`flex items-center justify-between p-2 w-full h-[80px] top-0 bg-white border-b dark:bg-black dark:border-b-gray-600 z-10 fixed ${scrollY > 150 ? 'bg-opacity-80 dark:bg-opacity-60 backdrop-blur-sm' : ''}`}>
+    <>
       <SideNav handleClose={toggleOpen} isOpen={isOpen} />
-      <Link to='/'>
-        <Text label="Logo" className="text-xl font-bold" />
-      </Link>
-      <div className="flex items-center gap-2">
-        <ModeToggle />
-        <CiMenuFries onClick={toggleOpen} className="h-6 w-6 md:hidden dark:text-white text-black" />
-        <div className="hidden md:flex items-center">
-          <Search />
-          <Link to='/login'><Button>Login</Button></Link>
+      <nav className={`flex items-center justify-between p-2 w-full h-[80px] top-0 bg-white border-b dark:bg-black dark:border-b-gray-600 z-10 fixed ${scrollY > 150 ? 'bg-opacity-80 dark:bg-opacity-60 backdrop-blur-sm' : ''}`}>
+        <Link to='/'>
+          <Text label="Logo" className="text-xl font-bold" />
+        </Link>
+        <div className="flex items-center gap-2">
+          <ModeToggle />
+          <CiMenuFries onClick={toggleOpen} className="h-6 w-6 md:hidden dark:text-white text-black" />
+          <div className="hidden md:flex items-center">
+            <Search />
+            <Link to='/login'><Button>Login</Button></Link>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   )
 }
