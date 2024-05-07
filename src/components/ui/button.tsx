@@ -9,8 +9,7 @@ export default function Button({ children, variant = "solid", ...props }: PropsW
 
     const { className } = props;
 
-    // Define styles based on the variant
-    let buttonStyles = cn("flex items-center justify-center gap-2 cursor-pointer select-none p-2 rounded transition duration-0 text-white transform active:scale-105 min-w-[60px] bg-primary hover:bg-primary-high");
+    let buttonStyles = cn("flex items-center justify-center gap-2 cursor-pointer select-none p-2 rounded transition duration-0 text-white transform active:scale-105 min-w-[60px] bg-transparent bg-gradient-to-br from-primary to-primary-high hover:to-primary-extra-high ");
 
     const danger = 'bg-red-600 hover:bg-red-700';
     const dangerOutline = 'border bg-white dark:bg-black border-red-600 text-red-600 hover:bg-red-200 hover:text-red';

@@ -12,7 +12,8 @@ export default {
       colors: {
         'primary-low':teal[200],
         'primary':teal[600],
-        'primary-high':teal[700]
+        'primary-high':teal[800],
+        'primary-extra-high':teal[800],
       }
     },
   },
