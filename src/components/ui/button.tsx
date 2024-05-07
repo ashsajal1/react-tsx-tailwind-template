@@ -22,7 +22,7 @@ export default function Button({ children, variant = "solid", ...props }: PropsW
     return (
         <button
             {...props}
-            className={cn(buttonStyles, className, { [danger]: variant === 'danger', [dangerOutline]: variant === 'danger-outline', ['bg-transparent bg-gradient-to-br from-primary to-primary-high hover:to-primary-extra-high']:variant==='solid'})}
+            className={cn(buttonStyles, className, { [danger]: variant === 'danger', [dangerOutline]: variant === 'danger-outline', ['bg-gradient-to-br from-primary to-primary-high hover:to-primary-extra-high']:variant==='solid'})}
         >
             {children}
         </button>
