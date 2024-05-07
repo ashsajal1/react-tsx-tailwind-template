@@ -12,7 +12,7 @@ export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, hand
     return (
         <>
             <div
-                className="fixed inset-0 select-none bg-black opacity-50 z-10"
+                className="fixed inset-0 select-none md:hidden bg-black opacity-50 z-10"
                 onClick={handleClose}
             ></div>
             <motion.nav
