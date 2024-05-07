@@ -34,10 +34,12 @@ export default function Navbar() {
         <Link to='/'>
           <Text label="Logo" className="text-xl font-bold" />
         </Link>
+
         <div className="flex items-center gap-2">
           <ModeToggle />
           <CiMenuFries onClick={toggleOpen} className="h-6 w-6 md:hidden dark:text-white text-black" />
-          <div className="hidden md:flex items-center">
+
+          <div className="hidden md:flex items-center gap-2">
             <Search />
             <Link to='/login'><Button>Login</Button></Link>
           </div>
