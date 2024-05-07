@@ -9,7 +9,7 @@ export default function Button({ children, variant = "solid", ...props }: PropsW
 
     const { className } = props;
 
-    let buttonStyles = cn("flex items-center justify-center gap-2 cursor-pointer select-none p-2 rounded transition duration-0 text-white transform active:scale-105 min-w-[60px] bg-transparent bg-gradient-to-br from-primary to-primary-high hover:to-primary-extra-high ");
+    let buttonStyles = "flex items-center justify-center gap-2 cursor-pointer select-none p-2 rounded transition duration-0 text-white transform active:scale-105 min-w-[60px]";
 
     const danger = 'bg-red-600 hover:bg-red-700';
     const dangerOutline = 'border bg-white dark:bg-black border-red-600 text-red-600 hover:bg-red-200 hover:text-red';
@@ -22,7 +22,7 @@ export default function Button({ children, variant = "solid", ...props }: PropsW
     return (
         <button
             {...props}
-            className={cn(buttonStyles, className, { [danger]: variant === 'danger', [dangerOutline]: variant === 'danger-outline' })}
+            className={cn(buttonStyles, className, { [danger]: variant === 'danger', [dangerOutline]: variant === 'danger-outline', ['bg-transparent bg-gradient-to-br from-primary to-primary-high hover:to-primary-extra-high']:variant==='solid'})}
         >
             {children}
         </button>
