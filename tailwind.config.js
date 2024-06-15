@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-import { teal } from 'tailwindcss/colors'
+import { teal, slate, gray } from 'tailwindcss/colors'
 export default {
   darkMode: 'selector',
   content: [
@@ -15,6 +15,8 @@ export default {
         'primary':teal[600],
         'primary-high':teal[800],
         'primary-extra-high':teal[900],
+        "light": slate[100],
+        "dark": gray[900]
       }
     },
   },
