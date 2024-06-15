@@ -15,7 +15,8 @@ export default {
         'primary':teal[600],
         'primary-high':teal[800],
         'primary-extra-high':teal[900],
-        "light": slate[300],
+        "light": slate[100],
+        "light-low": slate[50],
         "dark": gray[900]
       }
     },
