@@ -4,7 +4,7 @@ import { useThemeContext } from "../../hooks/useThemeContext";
 
 export default function ModeToggle() {
     const { isDarkMode, toggleMode } = useThemeContext();
-    console.log(isDarkMode)
+    // console.log(isDarkMode)
     return (
 
         <Button variant={'ghost'} onClick={toggleMode}>
