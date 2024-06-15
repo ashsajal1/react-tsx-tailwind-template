@@ -27,10 +27,16 @@ export default function Navbar() {
     };
   }, []);
 
+  const handleNavClick = () => {
+    if(isOpen) {
+      setIsOpen(false)
+    }
+  }
+
   return (
     <>
       <SideNav handleClose={toggleOpen} isOpen={isOpen} />
-      <nav className={`flex items-center justify-between p-2 w-full h-[80px] top-0 bg-white md:dark:border-none border-b dark:bg-black dark:border-b-gray-800 z-10 fixed ${scrollY > 150 ? 'bg-opacity-60 dark:bg-opacity-60 backdrop-blur' : ''}`}>
+      <nav className={`flex items-center justify-between p-2 w-full h-[80px] top-0 bg-white md:dark:border-none border-b dark:bg-black dark:border-b-gray-800 z-10 fixed ${scrollY > 150 ? 'bg-opacity-60 dark:bg-opacity-60 backdrop-blur' : ''}`} onClick={handleNavClick}>
         <Link to='/'>
           <Text label="Logo" className="text-xl font-bold" />
         </Link>
