@@ -4,7 +4,6 @@ import { z } from 'zod';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
 
 const schema = z.object({
     email: z.string().email(),
