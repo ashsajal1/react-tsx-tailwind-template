@@ -6,7 +6,7 @@ export default function RootLayout() {
         <>
             <Navbar />
             <main className='p-2 mt-[80px]'>
-            <Outlet />
+                <Outlet />
             </main>
             <Footer />
         </>
