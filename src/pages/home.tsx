@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../components/ui/button";
+import Button from "../components/custom-ui/button";
 import SideNav from "../components/partials/side-nav";
 
 export default function Home() {

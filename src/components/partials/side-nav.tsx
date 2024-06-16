@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import Button from '../ui/button'
-import ModeToggle from '../ui/mode-toggle'
-import Search from '../ui/search'
-import Text from './../ui/text'
+import Button from '../custom-ui/button'
+import ModeToggle from '../custom-ui/mode-toggle'
+import Search from '../custom-ui/search'
+import Text from '../custom-ui/text'
 import { HiOutlineXMark } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 
