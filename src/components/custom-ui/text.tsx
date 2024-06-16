@@ -1,5 +1,5 @@
+import { cn } from "@/lib/utils";
 import { HTMLAttributes } from "react";
-import { cn } from "../../lib/cn";
 
 interface TextProps extends HTMLAttributes<HTMLDivElement> {
     className?: string,
@@ -8,6 +8,6 @@ interface TextProps extends HTMLAttributes<HTMLDivElement> {
 
 export default function Text({ className, label, ...props }: TextProps) {
     return (
-        <div {...props} className={cn("text-transparent bg-gradient-to-br from-primary to-primary-high hover:to-primary-extra-high bg-clip-text", className)}>{label}</div>
+        <div {...props} className={cn("text-transparent bg-gradient-to-br from-primary to-primary hover:to-base bg-clip-text", className)}>{label}</div>
     )
 }

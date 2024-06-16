@@ -1,6 +1,9 @@
+import { Button } from "@/components/ui/button";
+
 export default function About() {
   return (
     <div>
+      <Button>Button</Button>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, odit quam ullam beatae consequuntur debitis iusto unde error, dolores inventore voluptatem molestiae excepturi? Architecto voluptate accusamus doloribus voluptatum quam rerum.
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, odit quam ullam beatae consequuntur debitis iusto unde error, dolores inventore voluptatem molestiae excepturi? Architecto voluptate accusamus doloribus voluptatum quam rerum.
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, odit quam ullam beatae consequuntur debitis iusto unde error, dolores inventore voluptatem molestiae excepturi? Architecto voluptate accusamus doloribus voluptatum quam rerum.

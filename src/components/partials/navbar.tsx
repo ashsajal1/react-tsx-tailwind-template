@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { CiMenuFries } from "react-icons/ci";
-import Button from "../ui/button";
-import ModeToggle from "../ui/mode-toggle";
-import Search from "../ui/search";
-import Text from "../ui/text";
+import Search from "../custom-ui/search";
+import Text from "../custom-ui/text";
 import SideNav from "./side-nav";
+import { ModeToggle } from "../mode-toggle";
+import { Button } from "../ui/button";
 
 export default function Navbar() {
   const [scrollY, setScrollY] = useState(0);
