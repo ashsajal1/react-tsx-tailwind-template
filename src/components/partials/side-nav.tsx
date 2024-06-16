@@ -1,10 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import Button from '../custom-ui/button'
 import Search from '../custom-ui/search'
 import Text from '../custom-ui/text'
 import { HiOutlineXMark } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 import { ModeToggle } from '../mode-toggle';
+import { Button } from '../ui/button';
 
 export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, handleClose: () => void }) {
 
@@ -42,7 +42,6 @@ export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, hand
                             <Link to='/login'><Button className='w-full'>Login</Button></Link>
                             <Link to='/signup'><Button className='w-full'>Signup</Button></Link>
                             <Link to='/about'><Button className='w-full'>About</Button></Link>
-
                         </div>
 
                         <div className='bottom-0 absolute left-0'>
