@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { Card } from "@/components/ui/card";
 
 const schema = z.object({
     email: z.string().email().nonempty("Email is required"),
@@ -30,7 +31,7 @@ export default function Signup() {
 
     return (
         <form className="flex items-center h-screen justify-center" onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex items-center flex-col p-4 border rounded w-full md:w-1/3 dark:border-gray-800">
+           <Card className="flex items-center flex-col p-4 border rounded w-full md:w-1/3">
                 <div className="flex flex-col w-full items-center gap-2">
 
 
@@ -49,7 +50,7 @@ export default function Signup() {
                 <Button className="w-full mt-3">Signup</Button>
 
                 <p className="text-sm p-2">Already have an account? <Link className="text-primary" to='/login'>Login now</Link></p>
-            </div>
+            </Card>
         </form>
     );
 }
