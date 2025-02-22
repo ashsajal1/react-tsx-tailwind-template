@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/hooks/use-theme";
 
 export function ModeToggle() {
-  const [theme, setTheme] = useState(
-    () => localStorage.getItem("theme") || "system"
-  );
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     if (theme === "system") {
@@ -16,7 +15,6 @@ export function ModeToggle() {
     } else {
       document.documentElement.classList.toggle("dark", theme === "dark");
     }
-    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (
