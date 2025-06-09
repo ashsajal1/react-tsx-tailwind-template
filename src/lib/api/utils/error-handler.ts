@@ -2,11 +2,17 @@ import { AxiosError } from 'axios';
 import { store } from '../../store';
 import { addToast } from '../../store/slices/uiSlice';
 
+interface ApiErrorData {
+    message?: string;
+    errors?: Record<string, string[]>;
+    code?: string;
+}
+
 export class ApiError extends Error {
     constructor(
         public status: number,
         public message: string,
-        public data?: any
+        public data?: ApiErrorData
     ) {
         super(message);
         this.name = 'ApiError';
