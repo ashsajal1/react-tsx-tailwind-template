@@ -7,6 +7,11 @@ import Login from './pages/login';
 import Signup from './pages/signup';
 import PrivateRoute from './pages/private-route';
 import Dashboard from './pages/dashboard';
+import Pricing from './pages/pricing';
+import Features from './pages/features';
+import Contact from './pages/contact';
+import Blog from './pages/blog';
+import Docs from './pages/docs';
 
 export const router = createBrowserRouter([
     {
@@ -28,6 +33,26 @@ export const router = createBrowserRouter([
             {
                 path:'/signup',
                 element: <Signup />
+            },
+            {
+                path:'/pricing',
+                element: <Pricing />
+            },
+            {
+                path:'/features',
+                element: <Features />
+            },
+            {
+                path:'/contact',
+                element: <Contact />
+            },
+            {
+                path:'/blog',
+                element: <Blog />
+            },
+            {
+                path:'/docs',
+                element: <Docs />
             },
             {
                 path:'*',
