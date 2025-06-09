@@ -11,6 +11,8 @@ import { cn } from "@/lib/utils";
 import { useAppDispatch, useAppSelector } from "@/lib/store";
 import { setCredentials, setError, setLoading } from "@/lib/store/slices/authSlice";
 import { addToast } from "@/lib/store/slices/uiSlice";
+import authService from "@/lib/api/services/auth.service";
+import { handleApiError } from "@/lib/api/utils/error-handler";
 
 const schema = z.object({
     email: z.string().email(),
@@ -37,19 +39,11 @@ export default function Login() {
             dispatch(setLoading(true));
             dispatch(setError(null));
             
-            // TODO: Replace with actual API call
-            // Simulating API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            const response = await authService.login(data);
             
-            // Mock successful login
             dispatch(setCredentials({
-                user: {
-                    id: '1',
-                    email: data.email,
-                    name: 'John Doe',
-                    role: 'user',
-                },
-                token: 'mock-jwt-token',
+                user: response.user,
+                token: response.token,
             }));
 
             dispatch(addToast({
@@ -59,11 +53,7 @@ export default function Login() {
 
             navigate('/dashboard');
         } catch (err) {
-            dispatch(setError(err instanceof Error ? err.message : 'Login failed'));
-            dispatch(addToast({
-                type: 'error',
-                message: 'Login failed. Please try again.',
-            }));
+            handleApiError(err);
         } finally {
             dispatch(setLoading(false));
         }
