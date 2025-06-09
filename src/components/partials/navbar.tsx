@@ -56,7 +56,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Text label="SaaSify" className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent" />
+              <Text label="SaaSify" className="text-xl font-bold text-primary" />
             </motion.div>
           </Link>
           
@@ -70,10 +70,10 @@ export default function Navbar() {
               >
                 <Link 
                   to={link.to} 
-                  className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors relative group"
+                  className="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors relative group"
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
                 </Link>
               </motion.div>
             ))}
@@ -85,14 +85,14 @@ export default function Navbar() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link 
                 to='/login' 
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+                className="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
               >
                 Sign in
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link to='/signup'>
-                <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button className="bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300">
                   Get Started
                 </Button>
               </Link>
@@ -106,7 +106,7 @@ export default function Navbar() {
           >
             <CiMenuFries 
               onClick={toggleOpen} 
-              className="h-6 w-6 md:hidden dark:text-white text-black cursor-pointer hover:opacity-80 transition-opacity" 
+              className="h-6 w-6 md:hidden text-gray-600 dark:text-gray-400 cursor-pointer hover:text-primary dark:hover:text-primary transition-colors" 
             />
           </motion.div>
         </div>

@@ -53,14 +53,14 @@ export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, hand
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.2 }}
                             >
-                                <Text className='text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent' label='SaaSify' />
+                                <Text className='text-xl font-bold text-primary' label='SaaSify' />
                             </motion.div>
                             <motion.button
                                 whileHover={{ scale: 1.1, rotate: 90 }}
                                 whileTap={{ scale: 0.9 }}
                                 onClick={handleClose}
                             >
-                                <HiOutlineXMark className='h-6 w-6 dark:text-white text-black cursor-pointer' />
+                                <HiOutlineXMark className='h-6 w-6 text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary cursor-pointer transition-colors' />
                             </motion.button>
                         </div>
 
@@ -85,7 +85,7 @@ export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, hand
                                         >
                                             <Link 
                                                 to={item.to} 
-                                                className='block px-2 py-1.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-all duration-200 hover:translate-x-1'
+                                                className='block px-2 py-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-all duration-200 hover:translate-x-1'
                                                 onClick={handleClose}
                                             >
                                                 {item.label}
