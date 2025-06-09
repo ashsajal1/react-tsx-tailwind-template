@@ -47,7 +47,7 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className={`flex items-center justify-between px-4 md:px-8 w-full h-[80px] top-0 bg-white/80 md:dark:border-none border-b dark:bg-black/80 dark:border-b-gray-800 z-10 fixed backdrop-blur-md ${scrollY > 150 ? 'shadow-sm' : ''}`} 
+        className={`flex items-center justify-between px-4 md:px-8 w-full h-[80px] top-0 bg-white/80 md:dark:border-none border-b dark:bg-black/80 dark:border-b-gray-800 z-20 fixed backdrop-blur-md ${scrollY > 150 ? 'shadow-sm' : ''}`} 
         onClick={handleNavClick}
       >
         <div className="flex items-center gap-8">
