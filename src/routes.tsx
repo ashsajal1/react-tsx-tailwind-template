@@ -12,11 +12,13 @@ import Features from './pages/features';
 import Contact from './pages/contact';
 import Blog from './pages/blog';
 import Docs from './pages/docs';
+import ErrorPage from './pages/error';
 
 export const router = createBrowserRouter([
     {
         path: '',
         element: <RootLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path:'/',
