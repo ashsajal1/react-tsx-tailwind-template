@@ -9,10 +9,8 @@ import Text from "@/components/custom-ui/text";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useAppDispatch, useAppSelector } from "@/lib/store";
-import { setCredentials, setError, setLoading } from "@/lib/store/slices/authSlice";
+import { login } from "@/lib/store/thunks/auth.thunks";
 import { addToast } from "@/lib/store/slices/uiSlice";
-import authService from "@/lib/api/services/auth.service";
-import { handleApiError } from "@/lib/api/utils/error-handler";
 
 const schema = z.object({
     email: z.string().email(),
@@ -36,16 +34,8 @@ export default function Login() {
 
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         try {
-            dispatch(setLoading(true));
-            dispatch(setError(null));
+            await dispatch(login(data)).unwrap();
             
-            const response = await authService.login(data);
-            
-            dispatch(setCredentials({
-                user: response.user,
-                token: response.token,
-            }));
-
             dispatch(addToast({
                 type: 'success',
                 message: 'Successfully logged in!',
@@ -53,9 +43,7 @@ export default function Login() {
 
             navigate('/dashboard');
         } catch (err) {
-            handleApiError(err);
-        } finally {
-            dispatch(setLoading(false));
+            // Error is already handled by the thunk
         }
     };
 
