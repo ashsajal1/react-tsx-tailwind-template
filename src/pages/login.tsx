@@ -73,17 +73,38 @@ export default function Login() {
                                             <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">
                                                 Email address
                                             </label>
-                                            <Input 
-                                                id="email"
-                                                className={cn(`w-full ${errors.email ? 'border-destructive' : ''}`)} 
-                                                placeholder="Enter your email" 
-                                                type="email" 
-                                                {...register('email')} 
-                                            />
+                                            <div className="relative">
+                                                <Input 
+                                                    id="email"
+                                                    className={cn(
+                                                        "w-full transition-all duration-200",
+                                                        errors.email 
+                                                            ? "border-destructive focus-visible:ring-destructive pr-10" 
+                                                            : "focus-visible:ring-primary"
+                                                    )} 
+                                                    placeholder="Enter your email" 
+                                                    type="email" 
+                                                    {...register('email')} 
+                                                />
+                                                {errors.email && (
+                                                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                                        <svg className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </div>
+                                                )}
+                                            </div>
                                             {errors.email && (
-                                                <span className="text-destructive text-sm mt-1 block">
+                                                <motion.p 
+                                                    initial={{ opacity: 0, y: -10 }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    className="text-destructive text-sm mt-1.5 flex items-center gap-1.5"
+                                                >
+                                                    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                                                    </svg>
                                                     Please enter a valid email address
-                                                </span>
+                                                </motion.p>
                                             )}
                                         </div>
 
@@ -91,17 +112,38 @@ export default function Login() {
                                             <label htmlFor="password" className="block text-sm font-medium text-foreground mb-1">
                                                 Password
                                             </label>
-                                            <Input 
-                                                id="password"
-                                                className={cn(`w-full ${errors.password ? 'border-destructive' : ''}`)} 
-                                                placeholder="Enter your password" 
-                                                type="password" 
-                                                {...register("password")} 
-                                            />
+                                            <div className="relative">
+                                                <Input 
+                                                    id="password"
+                                                    className={cn(
+                                                        "w-full transition-all duration-200",
+                                                        errors.password 
+                                                            ? "border-destructive focus-visible:ring-destructive pr-10" 
+                                                            : "focus-visible:ring-primary"
+                                                    )} 
+                                                    placeholder="Enter your password" 
+                                                    type="password" 
+                                                    {...register("password")} 
+                                                />
+                                                {errors.password && (
+                                                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                                        <svg className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </div>
+                                                )}
+                                            </div>
                                             {errors.password && (
-                                                <span className="text-destructive text-sm mt-1 block">
+                                                <motion.p 
+                                                    initial={{ opacity: 0, y: -10 }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    className="text-destructive text-sm mt-1.5 flex items-center gap-1.5"
+                                                >
+                                                    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                                                    </svg>
                                                     Password must be between 6 and 20 characters
-                                                </span>
+                                                </motion.p>
                                             )}
                                         </div>
                                     </div>
