@@ -145,8 +145,8 @@ export default function Pricing() {
                                             size="lg"
                                             className={`w-full relative overflow-hidden group ${
                                                 plan.popular 
-                                                    ? 'bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-primary/25' 
-                                                    : 'bg-gradient-to-r from-secondary to-secondary/90 hover:from-secondary/90 hover:to-secondary hover:shadow-lg'
+                                                    ? 'bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-primary/25 text-primary-foreground' 
+                                                    : 'bg-gradient-to-r from-secondary to-secondary/90 hover:from-secondary/90 hover:to-secondary hover:shadow-lg text-secondary-foreground'
                                             } transition-all duration-300`}
                                         >
                                             <span className="relative z-10">Get Started</span>
@@ -227,7 +227,7 @@ export default function Pricing() {
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Button 
                                     size="lg"
-                                    className="relative overflow-hidden group bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-primary/25 transition-all duration-300"
+                                    className="relative overflow-hidden group bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-primary/25 transition-all duration-300 text-primary-foreground"
                                 >
                                     <span className="relative z-10">Contact Sales</span>
                                     <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
@@ -235,7 +235,7 @@ export default function Pricing() {
                                 <Button 
                                     size="lg"
                                     variant="secondary"
-                                    className="relative overflow-hidden group bg-gradient-to-r from-secondary to-secondary/90 hover:from-secondary/90 hover:to-secondary hover:shadow-lg transition-all duration-300"
+                                    className="relative overflow-hidden group bg-gradient-to-r from-secondary to-secondary/90 hover:from-secondary/90 hover:to-secondary hover:shadow-lg transition-all duration-300 text-secondary-foreground"
                                 >
                                     <span className="relative z-10">View Documentation</span>
                                     <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
