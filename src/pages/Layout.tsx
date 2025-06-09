@@ -4,7 +4,7 @@ import Footer from "../components/partials/footer";
 
 export default function RootLayout() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Navbar />
       <main className="flex-grow p-2 mt-[80px]">
         <Outlet />
