@@ -64,7 +64,7 @@ export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, hand
                             stiffness: 300,
                             damping: 30
                         }}
-                        className='fixed inset-y-0 left-0 z-20 w-[300px] bg-white/95 dark:bg-black/95 border-r dark:border-r-gray-800 overflow-y-auto md:hidden backdrop-blur-md'
+                        className='fixed inset-y-0 left-0 z-30 w-[300px] bg-white/95 dark:bg-black/95 border-r dark:border-r-gray-800 overflow-y-auto md:hidden backdrop-blur-md'
                     >
                         <div className='flex items-center justify-between h-[80px] px-4 border-b dark:border-b-gray-800'>
                             <motion.div
