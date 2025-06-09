@@ -3,24 +3,43 @@ import { HiOutlineXMark } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 import { ModeToggle } from '../mode-toggle';
 import Text from '../custom-ui/text';
+import { 
+    Sparkles, 
+    CreditCard, 
+    BookOpen, 
+    Newspaper, 
+    LogIn, 
+    UserPlus,
+    BarChart3,
+    Settings,
+    HelpCircle
+} from 'lucide-react';
 
 const menuItems = [
-  {
-    title: "Main",
-    items: [
-      { to: "/features", label: "Features" },
-      { to: "/pricing", label: "Pricing" },
-      { to: "/docs", label: "Documentation" },
-      { to: "/blog", label: "Blog" },
-    ]
-  },
-  {
-    title: "Account",
-    items: [
-      { to: "/login", label: "Sign in" },
-      { to: "/signup", label: "Create account" },
-    ]
-  }
+    {
+        title: "Main",
+        items: [
+            { to: "/features", label: "Features", icon: <Sparkles className="w-4 h-4" /> },
+            { to: "/pricing", label: "Pricing", icon: <CreditCard className="w-4 h-4" /> },
+            { to: "/docs", label: "Documentation", icon: <BookOpen className="w-4 h-4" /> },
+            { to: "/blog", label: "Blog", icon: <Newspaper className="w-4 h-4" /> },
+        ]
+    },
+    {
+        title: "Account",
+        items: [
+            { to: "/login", label: "Sign in", icon: <LogIn className="w-4 h-4" /> },
+            { to: "/signup", label: "Create account", icon: <UserPlus className="w-4 h-4" /> },
+        ]
+    },
+    {
+        title: "Resources",
+        items: [
+            { to: "/analytics", label: "Analytics", icon: <BarChart3 className="w-4 h-4" /> },
+            { to: "/settings", label: "Settings", icon: <Settings className="w-4 h-4" /> },
+            { to: "/help", label: "Help Center", icon: <HelpCircle className="w-4 h-4" /> },
+        ]
+    }
 ];
 
 export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, handleClose: () => void }) {
@@ -85,9 +104,12 @@ export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, hand
                                         >
                                             <Link 
                                                 to={item.to} 
-                                                className='block px-2 py-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-all duration-200 hover:translate-x-1'
+                                                className='flex items-center gap-3 px-2 py-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-all duration-200 hover:translate-x-1'
                                                 onClick={handleClose}
                                             >
+                                                <span className="text-gray-400 dark:text-gray-500 group-hover:text-primary">
+                                                    {item.icon}
+                                                </span>
                                                 {item.label}
                                             </Link>
                                         </motion.div>
