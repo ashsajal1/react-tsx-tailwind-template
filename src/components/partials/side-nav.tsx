@@ -74,13 +74,22 @@ export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, hand
                             >
                                 <Text className='text-xl font-bold text-primary' label='SaaSify' />
                             </motion.div>
-                            <motion.button
-                                whileHover={{ scale: 1.1, rotate: 90 }}
-                                whileTap={{ scale: 0.9 }}
-                                onClick={handleClose}
-                            >
-                                <HiOutlineXMark className='h-6 w-6 text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary cursor-pointer transition-colors' />
-                            </motion.button>
+                            <div className="flex items-center gap-2">
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: 0.3 }}
+                                >
+                                    <ModeToggle />
+                                </motion.div>
+                                <motion.button
+                                    whileHover={{ scale: 1.1, rotate: 90 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    onClick={handleClose}
+                                >
+                                    <HiOutlineXMark className='h-6 w-6 text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary cursor-pointer transition-colors' />
+                                </motion.button>
+                            </div>
                         </div>
 
                         <div className='p-4 space-y-6'>
@@ -116,18 +125,6 @@ export default function SideNav({ isOpen, handleClose }: { isOpen: boolean, hand
                                     ))}
                                 </motion.div>
                             ))}
-
-                            {/* Theme Toggle */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.4 }}
-                                className='pt-4 border-t dark:border-t-gray-800'
-                            >
-                                <div className='px-2'>
-                                    <ModeToggle />
-                                </div>
-                            </motion.div>
                         </div>
                     </motion.nav>
                 </>
