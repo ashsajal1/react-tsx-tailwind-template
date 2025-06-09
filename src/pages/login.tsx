@@ -1,13 +1,16 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Seo from '../components/Seo';
 import Text from "@/components/custom-ui/text";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useAppDispatch, useAppSelector } from "@/lib/store";
+import { setCredentials, setError, setLoading } from "@/lib/store/slices/authSlice";
+import { addToast } from "@/lib/store/slices/uiSlice";
 
 const schema = z.object({
     email: z.string().email(),
@@ -17,6 +20,10 @@ const schema = z.object({
 type Inputs = z.infer<typeof schema>;
 
 export default function Login() {
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+    const { loading, error } = useAppSelector((state) => state.auth);
+
     const {
         register,
         handleSubmit,
@@ -25,7 +32,42 @@ export default function Login() {
         resolver: zodResolver(schema),
     });
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
+        try {
+            dispatch(setLoading(true));
+            dispatch(setError(null));
+            
+            // TODO: Replace with actual API call
+            // Simulating API call
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // Mock successful login
+            dispatch(setCredentials({
+                user: {
+                    id: '1',
+                    email: data.email,
+                    name: 'John Doe',
+                    role: 'user',
+                },
+                token: 'mock-jwt-token',
+            }));
+
+            dispatch(addToast({
+                type: 'success',
+                message: 'Successfully logged in!',
+            }));
+
+            navigate('/dashboard');
+        } catch (err) {
+            dispatch(setError(err instanceof Error ? err.message : 'Login failed'));
+            dispatch(addToast({
+                type: 'error',
+                message: 'Login failed. Please try again.',
+            }));
+        } finally {
+            dispatch(setLoading(false));
+        }
+    };
 
     return (
         <>
@@ -67,6 +109,15 @@ export default function Login() {
                             </div>
 
                             <div className="bg-card rounded-lg shadow-lg p-8">
+                                {error && (
+                                    <motion.div 
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="mb-4 p-3 bg-destructive/10 border border-destructive rounded-md text-destructive text-sm"
+                                    >
+                                        {error}
+                                    </motion.div>
+                                )}
                                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                                     <div className="space-y-4">
                                         <div>
@@ -166,8 +217,12 @@ export default function Login() {
                                         </Link>
                                     </div>
 
-                                    <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                                        Sign in
+                                    <Button 
+                                        type="submit" 
+                                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                                        disabled={loading}
+                                    >
+                                        {loading ? 'Signing in...' : 'Sign in'}
                                     </Button>
 
                                     <div className="relative my-6">

@@ -2,8 +2,12 @@ import * as React from "react"
 import { Cross2Icon } from "@radix-ui/react-icons"
 import * as ToastPrimitives from "@radix-ui/react-toast"
 import { cva, type VariantProps } from "class-variance-authority"
-
-import { cn } from "@/lib/utils"
+import { useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useAppSelector, useAppDispatch } from '@/lib/store';
+import { removeToast } from '@/lib/store/slices/uiSlice';
+import { cn } from '@/lib/utils';
+import { X } from 'lucide-react';
 
 const ToastProvider = ToastPrimitives.Provider
 
@@ -113,6 +117,57 @@ ToastDescription.displayName = ToastPrimitives.Description.displayName
 type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>
 
 type ToastActionElement = React.ReactElement<typeof ToastAction>
+
+const ToastNotification = () => {
+    const dispatch = useAppDispatch();
+    const toasts = useAppSelector((state) => state.ui.toasts);
+
+    useEffect(() => {
+        toasts.forEach((toast) => {
+            const timer = setTimeout(() => {
+                dispatch(removeToast(toast.id));
+            }, 5000); // Remove toast after 5 seconds
+
+            return () => clearTimeout(timer);
+        });
+    }, [toasts, dispatch]);
+
+    return (
+        <div className="fixed bottom-0 right-0 p-4 space-y-4 z-50">
+            <AnimatePresence>
+                {toasts.map((toast) => (
+                    <motion.div
+                        key={toast.id}
+                        initial={{ opacity: 0, y: 50, scale: 0.3 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
+                        className={cn(
+                            "min-w-[300px] p-4 rounded-lg shadow-lg flex items-start justify-between",
+                            {
+                                'bg-green-50 text-green-800 border border-green-200': toast.type === 'success',
+                                'bg-red-50 text-red-800 border border-red-200': toast.type === 'error',
+                                'bg-blue-50 text-blue-800 border border-blue-200': toast.type === 'info',
+                                'bg-yellow-50 text-yellow-800 border border-yellow-200': toast.type === 'warning',
+                            }
+                        )}
+                    >
+                        <div className="flex-1">
+                            <p className="text-sm font-medium">{toast.message}</p>
+                        </div>
+                        <button
+                            onClick={() => dispatch(removeToast(toast.id))}
+                            className="ml-4 text-gray-400 hover:text-gray-500 focus:outline-none"
+                        >
+                            <X className="h-4 w-4" />
+                        </button>
+                    </motion.div>
+                ))}
+            </AnimatePresence>
+        </div>
+    );
+};
+
+export default ToastNotification;
 
 export {
   type ToastProps,
