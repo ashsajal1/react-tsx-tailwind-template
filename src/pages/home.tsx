@@ -100,18 +100,50 @@ export default function Home() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16"
+                            className="mb-16 grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 w-full max-w-4xl"
                         >
                             {[
-                                { number: "10K+", label: "Active Users" },
-                                { number: "99.9%", label: "Uptime" },
-                                { number: "24/7", label: "Support" },
-                                { number: "50+", label: "Features" }
+                                { 
+                                    number: "10K+", 
+                                    label: "Active Users",
+                                    description: "Growing daily",
+                                    icon: <Users className="h-6 w-6 text-primary" />
+                                },
+                                { 
+                                    number: "99.9%", 
+                                    label: "Uptime",
+                                    description: "Last 30 days",
+                                    icon: <Zap className="h-6 w-6 text-primary" />
+                                },
+                                { 
+                                    number: "24/7", 
+                                    label: "Support",
+                                    description: "Average response time: 15min",
+                                    icon: <Shield className="h-6 w-6 text-primary" />
+                                },
+                                { 
+                                    number: "50+", 
+                                    label: "Features",
+                                    description: "Regular updates",
+                                    icon: <BarChart3 className="h-6 w-6 text-primary" />
+                                }
                             ].map((stat, index) => (
-                                <div key={index} className="text-center">
-                                    <div className="text-3xl font-bold text-primary mb-2">{stat.number}</div>
-                                    <div className="text-muted-foreground">{stat.label}</div>
-                                </div>
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                                    className="bg-card p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-border/50 hover:border-primary/20"
+                                >
+                                    <div className="flex items-center gap-3 mb-3">
+                                        {stat.icon}
+                                        <div className="text-3xl font-bold text-primary">{stat.number}</div>
+                                    </div>
+                                    <div className="space-y-1">
+                                        <div className="font-semibold text-foreground">{stat.label}</div>
+                                        <div className="text-sm text-muted-foreground">{stat.description}</div>
+                                    </div>
+                                </motion.div>
                             ))}
                         </motion.div>
                     </div>
